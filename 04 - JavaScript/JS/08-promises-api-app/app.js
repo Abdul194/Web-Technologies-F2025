@@ -1,5 +1,4 @@
 let apiUrl = "https://api.github.com/users/";
-// Noaman - Saleem - Portfolio;
 
 const userForm = document.getElementById("user-form");
 const responseMessage = document.getElementById("response-message");

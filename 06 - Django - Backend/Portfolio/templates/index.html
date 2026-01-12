@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <style>
+
+
+        .header{
+            background-image: url({% static 'images/main.png' %});
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+        }
+
+        #main {
+         color: white;
+         font-family: Verdana;
+         font-size: 20px;
+         font-weight: bold;
+         text-align: center;
+         text-decoration: underline;
+         padding-bottom: 20px;
+        }
+
+        .main-heading{
+            text-align: center;
+            padding-top: 120px;
+            color: white;
+        }
+
+        button {
+            padding: 10px 30px;
+            background-color: pink;
+            border: 2px solid red;
+            color: whitesmoke;
+            font-weight: bold;
+            font-family: Verdana;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: aliceblue;
+            height: 150px;
+            flex-wrap: wrap;
+        }
+
+        .box{
+            background-color: gray;
+            width: 120px;
+            text-align: center;
+            height: 50px;
+
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1 style="margin-top: 100px">SKills:</h1>
+    {% for skill in skills %}
+        <h5>{{ skill.name }}: {{ skill.score }}</h5>
+    {% endfor %}
+
+
+{#     <div class="header">#}
+{#        <h1 class="main-heading">Web Tech F2025</h1>#}
+{#        <p id="main">Welcome to the calss of future web developers</p>#}
+{#        <button>Contact Me</button>#}
+{#    </div>#}
+{#    <div style="border: 1px solid;">#}
+{#        <h2>Course Objective</h2>#}
+{#        <p class="intro">Web Technologies is a dynamic field that explores the principles and methodologies#}
+{#driving the development and optimization of web-based applications, enabling efficient#}
+{#communication and interaction over the internet.</p>#}
+{#        <p class="intro">Throughout this course, students will engage with case studies and real-world examples,#}
+{#gaining insight into the practical implementation of web technologies across various#}
+{#applications. Through hands-on exercises, they will develop proficiency in building robust#}
+{#and scalable web applications that meet modern industry standards and user expectations.</p>#}
+{#    </div>#}
+{#    <span style="border: 1px solid;">Resourse Person Intro</span>#}
+{#    <span style="border: 1px solid;">Message for Students</span>#}
+{#    <div style="border: 1px solid;">#}
+{#        <h2>Web Development Team</h2>#}
+{#        <img src="profile.jpg" alt="">#}
+{#    </div>#}
+{##}
+{#    <div class="container">#}
+{#        <div class="box">Product 1</div>#}
+{#        <div class="box">Product 2</div>#}
+{#        <div class="box">Product 3</div>#}
+{#        <div class="box">Product 4</div>#}
+{#        <div class="box">Product 5</div>#}
+{#        <div class="box">Product 6</div>#}
+{#    </div>#}
+{##}
+{##}
+{##}
+{#    <div style="border: 1px solid;">#}
+{#        <h2>Course Assessments</h2>#}
+{#        <ul>#}
+{#            <li>Assignment:10%</li>#}
+{#            <li>Quizez:10%</li>#}
+{#            <li>Midterm: 30%</li>#}
+{#            <li>FinalTerm: 30%</li>#}
+{#            <li>Project: 20%</li>#}
+{#        </ul>#}
+{#    </div>#}
+{#    <div style="border: 1px solid;">Footere</div>#}
+
+
+{% endblock %}
+

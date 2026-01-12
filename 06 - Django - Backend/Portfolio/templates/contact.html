@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Contact</h1>
+
+    <form action="{% url 'contact' %}" method="POST" style="margin-top: 100px">
+        {% csrf_token %}
+         <div>
+            <label for="username">Skill:</label>
+            <input type="text" name="skill" />
+        </div>
+
+         <div>
+            <label for="email">Level:</label>
+            <input type="text" name="score" />
+        </div>
+
+        <button type="submit">submit</button>
+
+
+    </form>
+{% endblock %}
+
+

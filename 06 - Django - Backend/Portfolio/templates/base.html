@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Tech F2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav{
+            background-color: black;
+            padding: 20px 30px;
+            height: 30px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .brand{
+            text-decoration: None;
+            color: white;
+            font-size: 24px;
+            font-weight: bolder;
+            float: left;
+        }
+
+        nav ul{
+            float: right;
+            list-style: none;
+            margin-right: 50px;
+        }
+
+        nav ul li{
+            display: inline-block;
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        nav ul li a:hover{
+            color: blueviolet;
+            background-color: gray;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+    </style>
+    {% block style %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="brand">MyBrand</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href={% url 'about' %}>About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href={% url 'contact' %}>Contact</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <div id="footer">This is Footer</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1 style="margin-top: 200px">Skills</h1>
+
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Score</th>
+                {% if user.is_authenticated %}
+                    <th>Update</th>
+                    <th>Delete</th>
+                {% endif %}
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for skill in skills %}
+                <tr>
+                    <td>#</td>
+                    <td>{{ skill.name }}</td>
+                    <td>{{ skill.score }}</td>
+                    {% if user.is_authenticated %}
+                        <td><a href="{% url 'skill:update_skills' skill.id %}">Update</a></td>
+                        <td>Delete</td>
+                    {% endif %}
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <h3>{{ skill.name }}: {{ skill.score }}</h3>
+
+
+{% endblock %}
+
+
